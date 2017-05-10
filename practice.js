@@ -34,7 +34,7 @@ var user = {
 }; //Code Here
 
 //Now, invoke the getUsername method and verify you got the username of the object and not anything else.
-var getUser = getUsername();
+user.getUsername();
 
 //Next Problem
 
@@ -46,7 +46,6 @@ function Car(make, model, year) {
   this.model = model;
   this.year = year;
   this.move = 0;
-
   this.moveCar = function() {
     return this.move += 10;
   }
@@ -90,16 +89,17 @@ var getMyUsername = function() {
   return this.username;
 };
 
-var userName = getMyUsername.call(myUser);
- //Fix this
+var userName = getMyUsername.bind(myUser)();
+//Fix this
 
 //Above you're given an object, and  a function. What will the getMyUsername function return?
 //Note(no tests)
+
 //it will return the username of whatever 'this' is set to. Whatever context 'this' is used in, it will access that object's username property. //Answer Here
 
 //In the example above, what is the 'this keyword' bound to when getMyUsername runs?
 
-//It would be bound to the window.  There is no explicit or implicit context included, so it defaults back to the browser window. //Answer Here
+//It would be bound to the window.  There is no explicit or implicit context included, so it defaults back to the browser window.//Answer Here
 
 
 //Fix the getMyUsername invocation (stored in the userName variable, at the bottom of the above code) so that userName will be equal to 'iliketurtles'.
